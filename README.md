@@ -23,6 +23,33 @@ The autonomous operation follows a robust 6-phase engineering pipeline:
 
 ---
 
+## ⚙️ Hardware Requirements
+
+To replicate this project, the following hardware components are required:
+
+| Component | Description / Specification | Purpose in Project |
+| :--- | :--- | :--- |
+| **Microcontroller** | **ESP32-S3 Dev Module** | Main controller executing navigation, obstacle avoidance, and fire suppression loops. |
+| **Chassis** | 4WD High-Torque Mobile Platform | Robust off-road chassis to traverse disaster zones and rubble fields. |
+| **GPS Module** | **u-blox NEO-M8P RTK GPS** | Provides centimeter-level high-accuracy positioning data. |
+| **Digital Compass** | **QMC5883L / QMC083L** | Magnetometer used for precise heading and directional calculation. |
+| **Motor Driver** | **L298N Dual H-Bridge** | Drives the 4WD high-torque motors based on navigation logic. |
+| **Obstacle Sensor** | **HC-SR04 Ultrasonic Sensor** | Real-time 360° obstacle tracking and distance calculation. |
+| **Fire Sensor** | **IR Flame Sensor Module** | Detects fire wavelengths and provides digital triggers to lock onto targets. |
+| **Water Pump** | High-Flow Mini Submersible Pump (12V) | Delivers high-pressure water flow to extinguish identified fires. |
+| **Actuator** | **MG996R High-Torque Servo** | Rotates the water nozzle (45° to 135°) for directional fire suppression. |
+| **Switching Module** | 5V Optocoupler Relay Module | Safely triggers the high-current water pump from the ESP32-S3 pin. |
+| **Power Source** | Li-ion / LiPo Battery Packs | Dual power rails separating high-current motors/pumps from logic boards. |
+
+### 🔌 Pin Mapping Summary
+*   **Motors:** Left (GPIO 12, 13), Right (GPIO 14, 27)
+*   **Ultrasonic Sensor:** Trig (GPIO 32), Echo (GPIO 33)
+*   **Flame Sensor:** Input (GPIO 34)
+*   **Servo Nozzle:** PWM (GPIO 25)
+*   **Pump Relay:** Digital Output (GPIO 26)
+
+---
+
 ## 📂 Repository Code Structure
 
 ```bash
